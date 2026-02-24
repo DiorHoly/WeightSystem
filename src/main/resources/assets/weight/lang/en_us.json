@@ -1,0 +1,14 @@
+{
+  "weight.hud.ratio": "(%d%%)",
+  "weight.hud.text": "Weight: %.1f / %.1f",
+  "key.weight.hud_config": "Open Weight HUD Setting",
+  "Weight System": "Weight System",
+  "key.weight.open_hud_settings": "Open Weight HUD Setting",
+  "category.weight.general": "Weight·General",
+  "enchantment.weight.weight_lifting": "Weight Lifting",
+  "enchantment.weight.weight_lifting.desc": "Increase carrying capacity, reducing total weight by 10% per level",
+  "enchantment.weight.powerless": "Powerless",
+  "enchantment.weight.powerless.desc": "Reduces carrying capacity, increasing total weight by 20% per level",
+  "enchantment.weight.overwhelming_strength": "Super Strong",
+  "enchantment.weight.overwhelming_strength.desc": "The power of the overlord always has a total weight of zero."
+}
