@@ -10,20 +10,17 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.GameType;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent.PlayerChangeGameModeEvent; // 修复：使用正确的游戏模式变更事件类
+import net.minecraftforge.event.entity.player.PlayerEvent.PlayerChangeGameModeEvent;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.Component; // 可选：导入组件类（提示消息用）
+import net.minecraft.network.chat.Component;
 import java.util.UUID;
 
-// 修复：确保类被Forge注册为事件监听器（需配合@Mod.EventBusSubscriber，或手动注册）
+
 public class WeightSpeedEvent {
-    // 固定UUID，用于唯一标识速度惩罚修饰符
     private static final UUID SPEED_MODIFIER_ID = UUID.fromString("88888888-8888-8888-8888-888888888888");
-    
-    // 主Tick事件处理：每刻检测玩家负重并更新速度惩罚
+
     @SubscribeEvent
     public void onPlayerTick(LivingEvent.LivingTickEvent event) {
-        // 双层校验：确保是服务端玩家，避免客户端执行逻辑
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
         if (player.level().isClientSide()) return;
         
@@ -50,11 +47,11 @@ public class WeightSpeedEvent {
         } else {
             updateWeightSpeedPenalty(player);
         }
-        // 可选：发送模式变更提示（需导入Component）
+        // 发送模式变更提示
         player.sendSystemMessage(Component.literal("游戏模式已切换，速度惩罚已更新"));
     }
     
-    // 核心方法：根据负重计算并应用速度惩罚
+    // 根据负重计算并应用速度惩罚
     private void updateWeightSpeedPenalty(ServerPlayer player) {
         // 空值校验：防止WeightCalculator静态方法返回异常
         double current = WeightCalculator.getCurrentWeight(player);
@@ -71,8 +68,7 @@ public class WeightSpeedEvent {
         
         // 空值校验：防止属性实例获取失败
         if (speedAttr == null) return;
-        
-        // 先移除旧修饰符，避免叠加
+
         speedAttr.removeModifier(SPEED_MODIFIER_ID);
         
         // 从配置获取对应负重比例的速度乘数
