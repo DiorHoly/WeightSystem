@@ -1,0 +1,20 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+showAsResourcePack=false
+
+[[mods]]
+modId="weight"
+version="0.4.2"
+displayName="Weight System"
+authors="Starlinn"
+description='''
+独立重量与承重模组，支持背包递归计算、配置颜色HUD
+'''
+
+[[dependencies.weight]]
+modId="forge"
+mandatory=true
+versionRange="[47.1.46,)"
+ordering="NONE"
+side="BOTH"

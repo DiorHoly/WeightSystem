@@ -1,0 +1,14 @@
+{
+  "weight.hud.text": "重量：%.1f / %.1f",
+  "weight.hud.ratio": "(%d%%)",
+  "key.weight.hud_config": "打开负重HUD设置",
+  "Weight System": "负重系统",
+  "key.weight.open_hud_settings": "打开HUD设置界面",
+  "category.weight.general": "负重·主体",
+  "enchantment.weight.weight_lifting": "举重",
+  "enchantment.weight.weight_lifting.desc": "提高负重能力，每级减少10%总重量",
+  "enchantment.weight.powerless": "无力",
+  "enchantment.weight.powerless.desc": "降低负重能力，每级增加20%总重量",
+  "enchantment.weight.overwhelming_strength": "力能抗鼎",
+  "enchantment.weight.overwhelming_strength.desc": "霸王之力，总重量恒定为0"
+}
